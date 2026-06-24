@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Stopwatch</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Share+Tech+Mono&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <header>
+    <span class="logo"><i class="fa-solid fa-stopwatch"></i> StopWatch</span>
+    <span class="badge">Task-02 · Prodigy Infotech</span>
+  </header>
+
+  <main>
+    <section class="watch-box">
+      <div class="ring">
+        <svg viewBox="0 0 200 200">
+          <circle cx="100" cy="100" r="90" class="track"/>
+          <circle cx="100" cy="100" r="90" class="prog" id="prog"/>
+        </svg>
+        <div class="time-wrap">
+          <time id="display">00:00:00</time>
+          <small id="ms">00</small>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="startBtn" onclick="startWatch()"><i class="fa-solid fa-play"></i> Start</button>
+        <button id="pauseBtn" onclick="pauseWatch()" disabled><i class="fa-solid fa-pause"></i> Pause</button>
+        <button id="lapBtn"   onclick="addLap()"    disabled><i class="fa-solid fa-flag"></i> Lap</button>
+        <button id="resetBtn" onclick="resetWatch()"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+      </div>
+    </section>
+
+    <section class="lap-section">
+      <h2><i class="fa-solid fa-list-ol"></i> Lap Times</h2>
+      <p id="emptyMsg">No laps recorded yet.</p>
+      <ol id="lapList"></ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built with <i class="fa-solid fa-heart" style="color:#7F77DD"></i> using HTML · CSS · JS</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
